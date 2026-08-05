@@ -78,9 +78,13 @@ python demo.py　
 # リポジトリ構成
 
 ```
-README.md
-demo.py
-requirements.txt
+Bongard-FewShot/
+│
+├── README.md
+├── demo.py
+├── requirements.txt
+├── LICENSE
+└── .gitignore
 ```
 
 ---
