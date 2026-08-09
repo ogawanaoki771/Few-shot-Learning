@@ -84,6 +84,9 @@ Bongard-FewShot/
 ├── demo.py
 ├── requirements.txt
 ├── LICENSE
+├── input.py
+├── SVM.py
+├── Test-Time Adaptation.md
 ├── stable.py
 └── .gitignore
 ```
