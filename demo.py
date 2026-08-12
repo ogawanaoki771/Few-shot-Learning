@@ -612,7 +612,24 @@ if __name__ == "__main__":
     
     X_train, y_train = generate_diverse_shapes(num_samples=12, img_size=IMG_SIZE, seed=101, family_type="train")
     X_test, y_test   = generate_diverse_shapes(num_samples=34, img_size=IMG_SIZE, seed=999, family_type="test")
+
+    print("[Demo] Showing 4 test shapes.")
+    for i in range(4):
+        ax = axes[0, 2] if i == 0 else axes[1, i - 1]
+        pts = np.array(X_test[i])
+        ax.scatter(pts[:, 0], pts[:, 1], s=10)
+        label_name = "Closed" if y_test[i] == 0 else "Open"
+        ax.set_title(f"Test {i + 1}: {label_name}")
+        ax.set_xlim(0, IMG_SIZE)
+        ax.set_ylim(IMG_SIZE, 0)
+        ax.set_aspect("equal")
+        ax.grid(True, linestyle=":", alpha=0.4)
     
+    plt.suptitle("Training and Test Shape Examples", fontsize=14, fontweight="bold")
+    plt.tight_layout()
+    plt.show()
+
+    print("[Demo] The visualization is complete.")
     print(f" |- Train Family : {len(X_train)} shapes (Closed: {sum(y_train==0)}, Open: {sum(y_train==1)})")
     print(f" |- Test Family  : {len(X_test)} shapes (Closed: {sum(y_test==0)}, Open: {sum(y_test==1)})\n")
     
@@ -636,8 +653,6 @@ if __name__ == "__main__":
     print("="*60)
     
     print("\nGenerating Internal Representation Dashboard...")
-    print("\nGenerating Pixel Count vs. Logistic Output Plot...")
-    plot_pixel_vs_logistic_output(eco, X_test, y_test, X_train, y_train)
     plot_bp015_research_dashboard(
         eco=eco, 
         sample_coords=X_test[0], 
@@ -646,3 +661,7 @@ if __name__ == "__main__":
         X_test_coords=X_test, 
         y_test=y_test
     )
+
+    print("\nGenerating Pixel Count vs. Logistic Output Plot...")
+    plot_pixel_vs_logistic_output(eco, X_test, y_test, X_train, y_train)
+    
