@@ -613,10 +613,10 @@ if __name__ == "__main__":
     X_train, y_train = generate_diverse_shapes(num_samples=12, img_size=IMG_SIZE, seed=101, family_type="train")
     X_test, y_test   = generate_diverse_shapes(num_samples=34, img_size=IMG_SIZE, seed=999, family_type="test")
 
-    print("[Demo] Showing 4 test shapes.")
+    
     
 
-    print("[Demo] The visualization is complete.")
+    
     print(f" |- Train Family : {len(X_train)} shapes (Closed: {sum(y_train==0)}, Open: {sum(y_train==1)})")
     print(f" |- Test Family  : {len(X_test)} shapes (Closed: {sum(y_test==0)}, Open: {sum(y_test==1)})\n")
     
@@ -651,6 +651,9 @@ if __name__ == "__main__":
 
     print("\nGenerating Pixel Count vs. Logistic Output Plot...")
     plot_pixel_vs_logistic_output(eco, X_test, y_test, X_train, y_train)
+    print("[Demo] The visualization is complete.")
+    print("[Demo] Showing 4 test shapes.")
+    print("[Demo] Showing 4 test shapes.")
     for i in range(4):
         ax = axes[0, 2] if i == 0 else axes[1, i - 1]
         pts = np.array(X_test[i])
