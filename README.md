@@ -21,7 +21,8 @@
 * 外部データセットなし
 * Data Augmentationなし
 * 人手設計特徴量なし
-* ただし、入力が最初から座標列や点列として与えられる場合は、その表現をそのまま利用することは許容します。 (座標をランダムにシャッフルし、順序に依存しない＞＞ /blob/main/stable_shuffle.py )
+* ただし、入力が最初から座標列や点列として与えられる場合は、その表現をそのまま利用することは許容します。
+* 座標をランダムにシャッフルし、順序に依存しない[＞＞ /blob/main/stable_shuffle.py ](https://github.com/ogawanaoki771/Few-shot-Learning/blob/main/stable_shuffle.py)
 * 具体的には、輪郭追跡、細線化（Skeletonization）、Euler数、Hu Moments、Fourier Descriptor、HOG、SIFTなどを入力特徴として利用する方法は対象外とします。
 
 さらに、学習時には存在しない形状ファミリーのみを用いて評価を行い、未知形状への一般化能力を検証します。
