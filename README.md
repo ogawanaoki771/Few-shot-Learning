@@ -1,5 +1,5 @@
 # Few-shot Learningによる未知図形への幾何学概念学習
-## 「ARC3を意識したゲームを作成しました。まずはデモをご覧ください。」
+## 「ARC3に似たようなゲームを作成しました。まずはデモをご覧ください。」
 ## デモのリンク：https://github.com/ogawanaoki771/fewshot-game/blob/main/game/new5.py
 ## あるいは```X.py```を見てください。
 ## 実装の詳細についてはTest-Time Adaptation.mdが参考になると思います。
